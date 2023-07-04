@@ -1,25 +1,127 @@
 const apiKey = '5d8e05f59cb9f03a2c99f8723cacd37d'
+const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}&language=pt-br&limit=200`
 
-fetch(`https://api.themoviedb.org/3/movie/157336?api_key=${apiKey}&limit=40`).then((response) => {
+/*const postsContainer = document.querySelector('#filmes')*/
+const main = document.getElementById('main');
+
+function getMovies(url) {
+
+      fetch(url).then(res => res.json()).then(data => {
+          console.log(data.results)
+          if(data.results.length !== 0){
+              showMovies(data.results);
+            }  
+      })
+}
+  
+  
+  function showMovies(data) {
+      main.innerHTML = '';
+  
+      data.forEach(movie => {
+          const {title, overview} = movie;
+          const movieEl = document.createElement('div');
+          movieEl.classList.add('movie');
+          movieEl.innerHTML = 
+          `<div class="movie-info">
+                  <h3>${title}</h3>
+              </div>
+  
+              <div class="overview">
+  
+                  <h3>Overview</h3>
+                  ${overview}
+                  <br/> 
+              </div>
+          `
+          main.appendChild(movieEl);
+  
+      })
+  }
+
+  getMovies(url);
+
+
+
+
+
+
+
+
+
+
+
+  /*async function getAllPosts() {
+    const response = await fetch(url)
+
+    const data = await response.json();
+    
+    console.log(data);
+
+
+
+
+    data.map(() => {
+    
+        const div = document.createElement('div')
+        const title = document.createElement('h2')
+        const body = document.createElement('p')
+       
+      title.innerText = page.title
+
+      div.appendChild(title);
+        div.appendChild(body);
+
+       postsContainer.appendChild(div);
+    })
+
+}
+
+getAllPosts();
+
+/*getAllPosts();*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*fetch(url).then((response) => {
     return response.json();
 
 }).then((jsonParsed) => {
 
-    const divFilmes = document.getElementById('filmes');
-    jsonParsed.data.forEach(element => {
-        const tituloFilme = element.original_title
+    /*const divFilmes = document.getElementById('filmes');
+    
+    jsonParsed.data.results.forEach(element => {
+       const tituloFilme = data.results
 
        
-        creatDivFilme = (tituloFilme)
+        creatDivFilme = (tituloFilme)*/
 
-        console.log(jsonParsed);
-    })
-})
+        /*console.log(jsonParsed);*/
+
     
 
 
-
-function creatDivFilme(tituloFilme) {
+/*function creatDivFilme(tituloFilme) {
     const divPai = document.createElement('div')
     const divFilho = document.createElement('div')
     const textName = document.createElement('text')
@@ -32,4 +134,4 @@ function creatDivFilme(tituloFilme) {
     divToAppend.appendChild(divPai)
 
     divPai.classList.add('personagem');
-}
+}*/
