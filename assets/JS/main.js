@@ -1,7 +1,6 @@
 const apiKey = '5d8e05f59cb9f03a2c99f8723cacd37d'
-const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}&language=pt-br&limit=200`
-
-/*const postsContainer = document.querySelector('#filmes')*/
+const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}&language=pt-br&limit=10`
+const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const main = document.getElementById('main');
 
 function getMovies(url) {
@@ -19,11 +18,14 @@ function getMovies(url) {
       main.innerHTML = '';
   
       data.forEach(movie => {
-          const {title, overview} = movie;
+          const {title, poster_path, vote_average, overview} = movie;
           const movieEl = document.createElement('div');
           movieEl.classList.add('movie');
           movieEl.innerHTML = 
-          `<div class="movie-info">
+          `
+          <img src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}">
+          
+          <div class="movie-info">
                   <h3>${title}</h3>
               </div>
   
