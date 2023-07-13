@@ -25,13 +25,15 @@ function getMovies(url) {
           `
           <img src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}">
           
+          <div class="vote">
+          <h4>${vote_average}</h4>
+
           <div class="movie-info">
                   <h3>${title}</h3>
-              </div>
-  
+              </div> 
               <div class="overview">
   
-                  <h3>Overview</h3>
+                  <h3>Resumo</h3>
                   ${overview}
                   <br/> 
               </div>
