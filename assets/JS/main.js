@@ -2,8 +2,17 @@ const apiKey = '5d8e05f59cb9f03a2c99f8723cacd37d'
 const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}&language=pt-br&limit=10`
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const main = document.getElementById('main');
+const genreSelect = document.getElementById('selecionar__genero')
 
-function getMovies(url) {
+
+function getMovies() {
+
+    const selectedGenre = genreSelect.value;
+    let url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}&language=pt-br`;
+
+    if (selectedGenre) {
+        url += `&with_genres=${selectedGenre}`;
+    }
 
       fetch(url).then(res => res.json()).then(data => {
           console.log(data.results)
@@ -43,99 +52,7 @@ function getMovies(url) {
       })
   }
 
-  getMovies(url);
+  genreSelect.addEventListener('change', getMovies)
 
+  getMovies();
 
-
-
-
-
-
-
-
-
-
-  /*async function getAllPosts() {
-    const response = await fetch(url)
-
-    const data = await response.json();
-    
-    console.log(data);
-
-
-
-
-    data.map(() => {
-    
-        const div = document.createElement('div')
-        const title = document.createElement('h2')
-        const body = document.createElement('p')
-       
-      title.innerText = page.title
-
-      div.appendChild(title);
-        div.appendChild(body);
-
-       postsContainer.appendChild(div);
-    })
-
-}
-
-getAllPosts();
-
-/*getAllPosts();*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*fetch(url).then((response) => {
-    return response.json();
-
-}).then((jsonParsed) => {
-
-    /*const divFilmes = document.getElementById('filmes');
-    
-    jsonParsed.data.results.forEach(element => {
-       const tituloFilme = data.results
-
-       
-        creatDivFilme = (tituloFilme)*/
-
-        /*console.log(jsonParsed);*/
-
-    
-
-
-/*function creatDivFilme(tituloFilme) {
-    const divPai = document.createElement('div')
-    const divFilho = document.createElement('div')
-    const textName = document.createElement('text')
-
-
-    textName.textContent = tituloFilme
-
-    divFilho.appendChild(textName)
-    divPai.appendChild(divFilho)
-    divToAppend.appendChild(divPai)
-
-    divPai.classList.add('personagem');
-}*/
