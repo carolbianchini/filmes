@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filmes</title>
+    <title>YourMovie</title>
 </head>
 <header>
-    <h1>Filmes</h1>
+    <h1>YourMovie</h1>
+
+    <nav>
+        <ul>
+            <li>Filmes</li>
+            <li>Gênero</li>
+            <li>Página</li>
+            <li>Contato</li>
+        </ul>
+    </nav>
 </header>
 
-<div id="filmes"></div>
+<main>
+    <label for="selecionar__genero">Gênero</label>
+    <select name="Gênero" id="selecionar__genero">
+        <option value="">Todos</option>
+        <option value="28">Ação</option>
+        <option value="35">Comédia</option>
+        <option value="18">Drama</option>
+    </select>
+
+<div id="main"></div>
+
+<button id="botão__Anterior">Anterior</button>
+<button id="botão__Próximo">Próximo</button>
+
+</main>
+
 <body>
     <script src="/assets/JS/main.js"></script>
 </body>
