@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+
     <title>YourMovie</title>
 </head>
 <header>
-    <h1>YourMovie</h1>
+    <h1>Your<span class="movie__titulo">Movie</span></h1>
 
-    <nav>
-        <ul>
-            <li>Filmes</li>
-            <li>Gênero</li>
-            <li>Página</li>
-            <li>Contato</li>
+    <input type="checkbox" id="menu">
+        <label for="menu">
+            <img src="assets/imagens/menu (2).png" class="img__menu-hamburguer">
+        </label>
+
+        <ul class="lista__menu">
+            <li class="lista__menu-itens">Home</li>
+            <li class="lista__menu-itens">Sobre</li>
+            <li class="lista__menu-itens">Contato</li>
         </ul>
-    </nav>
+
 </header>
 
 <main>
@@ -31,7 +36,7 @@
         <option value="18">Drama</option>
         <option value="10751">Familia</option>
         <option value="36">História</option>
-        <option value="27">Horror</option>
+        <option value="27">Terror</option>
         <option value="9648">Mistério</option>
         <option value="10749">Romance</option>
         <option value="878">Ficção Científica</option>
