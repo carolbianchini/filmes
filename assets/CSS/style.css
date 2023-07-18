@@ -1,0 +1,24 @@
+body {
+    background-color: #192749;
+}
+
+h1 {
+    color: 		#d62828;
+}
+
+.movie__titulo {
+    color: #f77f00;
+}
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.movie {
+    width: 20%;
+}
+
+.movie img {
+    width: 290px;
+}
