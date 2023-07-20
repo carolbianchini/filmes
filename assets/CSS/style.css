@@ -3,7 +3,7 @@
 
 
 body {
-    background-color: #192749;
+    background-color:var(--azul-escuro-fundo);
     margin: 0 0 0 0;
     width: auto;
 }
@@ -14,5 +14,7 @@ body {
     --fonte-título: 'Pangolin', cursive;
     --fonte-paragrafo:'Alegreya Sans', sans-serif;
     --azul-menu: #00122b;
+    --amarelo: #fcbf49;
+    --azul-escuro-fundo: #142D43;
 
 }

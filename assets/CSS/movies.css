@@ -1,3 +1,22 @@
+.generos {
+    margin: 20px 0 20px 15px;
+}
+
+.titulo__dropdown {
+    font-family: var(--fonte-título);
+    color: var(--amarelo);
+}
+
+#selecionar__genero{
+    font-family: var(--fonte-paragrafo);
+    font-size: 15px;
+    background-color: #d0d5d9;
+    color: var(--azul-menu);
+    font-weight: bold;
+    border: none;
+    border-radius: 2.5px;
+}
+
 #main {
     display: flex;
     flex-wrap: wrap;

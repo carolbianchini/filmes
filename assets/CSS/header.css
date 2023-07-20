@@ -40,9 +40,8 @@ header {
     font-weight: 600;
     font-size: 18px;
     font-family: var(--fonte-paragrafo);
+    border-radius: 2.5px;
 }
-
-
 
 #menu:checked ~ .lista__menu {
     display: flex;
