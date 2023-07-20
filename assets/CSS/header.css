@@ -1,0 +1,46 @@
+h1 {
+    color:#d62828;
+    font-family: 'Pangolin', cursive;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.movie__titulo {
+    color: #f77f00;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu {
+    display: none;
+}
+
+.lista__menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    left: 250px;
+    top: 50px;
+    list-style: none;
+    text-decoration: underline;
+    background-color: var(--cinza-claro);
+    font-family: var(--fonte-paragrafo);
+    font-weight: 500;
+    height: 160px;
+    margin: 0 0;
+    padding: 10px 20px;
+    color: var(--preto);
+}
+
+#menu:checked ~ .lista__menu {
+    display: flex;
+}
+
+.menu__entrar {
+    display: none;
+}
+
