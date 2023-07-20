@@ -1,0 +1,22 @@
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    text-align: center;
+}
+
+
+.movie {
+   display: flex;
+   flex-direction: column; 
+   width: 40%;
+}
+
+.movie img {
+    width: 100%;
+}
+
+.overview {
+    display: none;
+}

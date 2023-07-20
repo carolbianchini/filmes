@@ -1,17 +1,22 @@
 h1 {
-    color:#d62828;
-    font-family: 'Pangolin', cursive;
+    color: var(--vermelho);
+    font-family: var(--fonte-título);
     font-weight: bold;
     font-size: 40px;
+    margin: 20px 0 0 20px;
 }
 
 .movie__titulo {
-    color: #f77f00;
+    color: var(--laranja);
 }
 
 header {
     display: flex;
     justify-content: space-between;
+}
+
+.img__menu-hamburguer {
+    margin: 22px 10px;
 }
 
 #menu {
@@ -23,18 +28,21 @@ header {
     flex-direction: column;
     justify-content: space-around;
     position: absolute;
-    left: 250px;
+    left: 265px;
     top: 50px;
     list-style: none;
     text-decoration: underline;
-    background-color: var(--cinza-claro);
-    font-family: var(--fonte-paragrafo);
-    font-weight: 500;
+    background-color: rgba(252, 191, 73, 0.6);
     height: 160px;
     margin: 0 0;
     padding: 10px 20px;
-    color: var(--preto);
+    color: var(--azul-menu);
+    font-weight: 600;
+    font-size: 18px;
+    font-family: var(--fonte-paragrafo);
 }
+
+
 
 #menu:checked ~ .lista__menu {
     display: flex;

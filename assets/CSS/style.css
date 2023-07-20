@@ -1,30 +1,18 @@
 @import url('header.css');
+@import url('movies.css');
 
 
 body {
     background-color: #192749;
-    margin: 0 5px 0 5px;
+    margin: 0 0 0 0;
     width: auto;
 }
 
-#main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 100%;
-    text-align: center;
-}
+:root {
+    --vermelho:#d62828;
+    --laranja: #f77f00;
+    --fonte-título: 'Pangolin', cursive;
+    --fonte-paragrafo:'Alegreya Sans', sans-serif;
+    --azul-menu: #00122b;
 
-.movie {
-   display: flex;
-   flex-direction: column; 
-   width: 40%;
-}
-
-.movie img {
-    width: 100%;
-}
-
-.overview {
-    display: none;
 }
