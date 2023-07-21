@@ -1,5 +1,5 @@
 const apiKey = '5d8e05f59cb9f03a2c99f8723cacd37d';
-const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}&language=pt-br&limit=100`;
+const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}&limit=100`;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const main = document.getElementById('main');
 const genreSelect = document.getElementById('selecionar__genero');
@@ -44,15 +44,20 @@ function showMovies(data) {
         movieEl.classList.add('movie');
         movieEl.innerHTML = `
             <img src="${poster_path ? IMG_URL + poster_path : "http://via.placeholder.com/1080x1580"}" alt="${title}">
-            <div class="vote">
-                <h4>${vote_average}</h4>
-                <div class="movie-info">
+            <div class="movie-info">
                     <h3>${title}</h3>
                 </div> 
+            
+                
                 <div class="overview">
-                    <h3>Resumo</h3>
+                
+                <img src="${poster_path ? IMG_URL + poster_path : "http://via.placeholder.com/1080x1580"}" class="img__overview" alt="${title}">
+                <h3>${title}</h3>    
+                <h3>Overview</h3>
                     ${overview}
                     <br/> 
+                    <div class="vote">
+                    <h4>Rating ${vote_average}</h4>
                 </div>
             </div>
         `;

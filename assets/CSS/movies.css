@@ -37,5 +37,25 @@
 }
 
 .overview {
-    display: none;
+    display: block;
+    position: fixed;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza a caixa no centro da tela */
+    z-index: 999; /* Garante que a caixa de texto fique em cima de outros elementos */
+    background-color: #f1f1f1;
+    padding: 10px;
+    width: 80%; /* Define a largura máxima da caixa */
+    border: 1px solid #ccc;
+}
+
+.movie-info {
+    font-family: var(--fonte-paragrafo);
+    font-size: 15px;
+    color: var(--amarelo);
+}
+
+.vote {
+    font-family: var(--fonte-paragrafo);
+    font-size: 15px;
 }
