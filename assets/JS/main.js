@@ -35,42 +35,64 @@ function getMovies(url) {
         });
 }
 
+function hideOverview(movieEl) {
+    const modal = movieEl.querySelector('.overview');
+    modal.style.display = 'none';
+}
+
 function showMovies(data) {
     main.innerHTML = '';
 
     data.forEach(movie => {
-        const { title, poster_path, vote_average, overview } = movie;
+        const { id, title, poster_path, vote_average, overview} = movie;
         const movieEl = document.createElement('div');
         movieEl.classList.add('movie');
         movieEl.innerHTML = `
-            <img src="${poster_path ? IMG_URL + poster_path : "http://via.placeholder.com/1080x1580"}" alt="${title}">
+            <img src="${poster_path ? IMG_URL + poster_path : "http://via.placeholder.com/1080x1580"}" class="img__movie" alt="${title}">
             <div class="movie-info">
-                    <h3>${title}</h3>
-                </div> 
-            
-                
-                <div class="overview">
-                
+                <h3>${title}</h3>
+            </div>
+            <div class="overview" style="display: none;">
                 <img src="${poster_path ? IMG_URL + poster_path : "http://via.placeholder.com/1080x1580"}" class="img__overview" alt="${title}">
-                <h3>${title}</h3>    
-                <h3>Overview</h3>
-                    ${overview}
-                    <br/> 
-                    <div class="vote">
-                    <h4>Rating ${vote_average}</h4>
-                </div>
+                <h3>${title}</h3>
+                <h4>Rating: ${vote_average}</h4>
+                <p>${overview}</p>
+                <button class="close-btn">Fechar</button>
             </div>
         `;
         main.appendChild(movieEl);
+
+        movieEl.addEventListener('click', function () {
+            const modal = movieEl.querySelector('.overview');
+            modal.style.display = 'block';
+        });
+
+        const closeBtn = movieEl.querySelector('.close-btn');
+        closeBtn.addEventListener('click', function (event) {
+            event.stopPropagation();
+            hideOverview(movieEl);
+        });
     });
 }
 
+
+
+main.addEventListener('click', function (event) {
+    if (event.target.classList.contains('img__movie')) {
+        const movieElement = event.target.closest('.movie');
+        hideOverview(movieElement);
+    }
+});
+
+
+
+
 genreSelect.addEventListener('change', () => {
-    currentPage = 1; // Reinicia a página para a primeira quando o gênero é alterado
+    currentPage = 1;
     getMovies(`${url}&page=${currentPage}`);
 });
 
-// Chama a função getMovies() inicialmente com a primeira página
+
 getMovies(`${url}&page=${currentPage}`);
 
 
