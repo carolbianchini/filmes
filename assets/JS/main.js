@@ -44,7 +44,7 @@ function showMovies(data) {
     main.innerHTML = '';
 
     data.forEach(movie => {
-        const { id, title, poster_path, vote_average, overview} = movie;
+        const {title, poster_path, vote_average, overview} = movie;
         const movieEl = document.createElement('div');
         movieEl.classList.add('movie');
         movieEl.innerHTML = `
@@ -52,7 +52,7 @@ function showMovies(data) {
             <div class="movie-info">
                 <h3>${title}</h3>
             </div>
-            <div class="overview" style="display: none;">
+            <div class="overview">
                 <img src="${poster_path ? IMG_URL + poster_path : "http://via.placeholder.com/1080x1580"}" class="img__overview" alt="${title}">
                 <h3>${title}</h3>
                 <h4>Rating: ${vote_average}</h4>
@@ -76,15 +76,12 @@ function showMovies(data) {
 }
 
 
-
 main.addEventListener('click', function (event) {
     if (event.target.classList.contains('img__movie')) {
         const movieElement = event.target.closest('.movie');
         hideOverview(movieElement);
     }
 });
-
-
 
 
 genreSelect.addEventListener('change', () => {

@@ -43,10 +43,10 @@
     left: 50%;
     transform: translate(-50%, -50%); 
     z-index: 999; 
-    background-color: #f1f1f1;
+    background-color:#517c96;
     padding: 10px;
     width: 80%;
-    border: 1px solid #ccc;
+    border:none;
 }
 
 .movie-info {
@@ -57,5 +57,34 @@
 
 .vote {
     font-family: var(--fonte-paragrafo);
-    font-size: 15px;
+    font-size: 12px;
 }
+
+.overview img {
+    width: 60%;
+}
+
+.overview h3 {
+    font-family: var(--fonte-título);
+    color: var(--amarelo);
+    font-size: 25px;
+
+}
+
+.overview h4 {
+    font-family: var(--fonte-paragrafo);
+    color: #e67701;
+    font-size: 18px;
+}
+
+.overview p {
+    font-family: var(--fonte-paragrafo);
+    font-weight: 500;
+}
+
+.overview button {
+    background-color: #e67701;
+    border: none;
+    border-radius: 5px;
+}
+
